@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@string/empty_cart"
+        android:src="@drawable/cart" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/empty_cart"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnAddNew"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="@string/shop_now"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/tvTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/empty_cart"
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+</LinearLayout>

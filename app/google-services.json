@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "182127447025",
+    "firebase_url": "https://jaijalaram-e003a.firebaseio.com",
+    "project_id": "jaijalaram-e003a",
+    "storage_bucket": "jaijalaram-e003a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182127447025:android:5297d28369d2b290",
+        "android_client_info": {
+          "package_name": "patel.jay.jaijalaram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "182127447025-velnjsn4m1p6babs3lb4jem4icgbrg08.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "patel.jay.jaijalaram",
+            "certificate_hash": "a9f3b16c51bca05ffe16835fec8e5ff65fda44d6"
+          }
+        },
+        {
+          "client_id": "182127447025-ufpghdqbel1cne7cn3edfqg98rmvooml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQBDqzypIuYC6z8zAwJ3Ky1OUyUFItiQk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "182127447025-ufpghdqbel1cne7cn3edfqg98rmvooml.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

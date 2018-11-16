@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    tools:context="patel.jay.jaijalaram.Activity.AdminDashActivity">
+
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Add Items"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnEditMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Menu"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnPie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Pie Chart"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnOrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="All Orders"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnCust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Customers"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

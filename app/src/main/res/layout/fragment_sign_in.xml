@@ -1,0 +1,72 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="patel.jay.jaijalaram.Login.SignInFragment">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/etMobile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="@string/enter_mobile_no"
+        android:inputType="number"
+        android:maxLength="10"
+        app:met_floatingLabel="highlight" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/etPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="@string/enter_password"
+        android:inputType="numberPassword"
+        android:maxLength="4"
+        app:met_floatingLabel="highlight" />
+
+    <TextView
+        android:id="@+id/tvForgot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="end"
+        android:paddingEnd="20dp"
+        android:paddingStart="1dp"
+        android:text="@string/forgot_pass"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnback"
+            android:minHeight="@dimen/min_height"
+            android:minWidth="@dimen/min_width"
+            android:text="@string/clear"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnback"
+            android:minHeight="@dimen/min_height"
+            android:minWidth="@dimen/min_width"
+            android:text="@string/sign_in"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>
