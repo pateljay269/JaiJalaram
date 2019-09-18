@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/graphLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/spnCal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:entries="@array/asd" />
+
+        <CheckBox
+            android:id="@+id/chkDisName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/display_name"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/spnYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/asd"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/spnMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/asd"
+            android:visibility="gone" />
+
+        <Spinner
+            android:id="@+id/spnDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/asd"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnDtStart"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/btnback"
+            android:text="@string/start_date"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnDtEnd"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/btnback"
+            android:text="@string/end_date"
+            android:textColor="@android:color/white"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnFind"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginEnd="@dimen/floating_btn"
+        android:layout_marginStart="@dimen/floating_btn"
+        android:background="@drawable/btnback"
+        android:text="@string/find"
+        android:textColor="@android:color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/turquoise"
+        android:textSize="20sp" />
+
+    <!--<com.github.mikephil.charting.charts.BarChart-->
+    <!--android:id="@+id/barchart"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="220dp"-->
+    <!--android:visibility="gone" />-->
+
+    <com.github.mikephil.charting.charts.HorizontalBarChart
+        android:id="@+id/barchart1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible" />
+
+</LinearLayout>

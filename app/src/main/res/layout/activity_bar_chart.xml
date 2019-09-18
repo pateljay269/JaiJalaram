@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="patel.jay.jaijalaram.Activity.BarChartActivity">
+    tools:activity="patel.jay.jaijalaram.Panel.Admin.BarChartActivity">
 
     <com.jjoe64.graphview.GraphView
         android:id="@+id/graph"

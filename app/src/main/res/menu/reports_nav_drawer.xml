@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/repo_gross"
+        android:title="@string/periodic_reports" />
+
+    <item
+        android:id="@+id/repo_custom"
+        android:title="@string/custom_reports" />
+
+    <item
+        android:id="@+id/repo_item_sale"
+        android:title="@string/items_sale_reports" />
+
+    <item
+        android:id="@+id/repo_datewise"
+        android:title="@string/date_wise_reports" />
+
+    <item
+        android:id="@+id/repo_specific"
+        android:title="@string/specific_search_reports" />
+
+    <item
+        android:id="@+id/repo_max_sale"
+        android:title="@string/max_sale_by_customer" />
+
+    <item
+        android:id="@+id/repo_cust_avg"
+        android:title="@string/customer_avg_reports" />
+
+    <item
+        android:id="@+id/repo_cust_sale"
+        android:title="@string/customer_sale_reports" />
+
+    <item
+        android:id="@+id/repo_sale_by"
+        android:title="@string/sale_by_customer" />
+
+    <group android:id="@+id/nav_menu">
+
+        <item
+            android:id="@+id/repo_attend_datewise"
+            android:title="@string/attendance_report" />
+
+        <item
+            android:id="@+id/repo_attend_specific"
+            android:title="@string/datewise_attendance" />
+
+    </group>
+
+</menu>

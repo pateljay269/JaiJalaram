@@ -66,14 +66,6 @@
                     android:hint="@string/dsc"
                     android:inputType="textCapWords" />
 
-                <TextView
-                    android:id="@+id/tvDsc"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/dsc"
-                    android:textColor="@color/light_grey"
-                    android:textSize="18sp" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

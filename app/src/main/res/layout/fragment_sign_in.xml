@@ -4,7 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="patel.jay.jaijalaram.Login.SignInFragment">
+    tools:activity="patel.jay.jaijalaram.Login.SignInFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Login Form:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="25sp" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/etMobile"

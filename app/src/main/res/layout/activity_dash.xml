@@ -20,6 +20,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_head_dash"
-        app:menu="@menu/activity_dash_board_drawer" />
+        app:menu="@menu/cust_dashboard" />
 
 </android.support.v4.widget.DrawerLayout>

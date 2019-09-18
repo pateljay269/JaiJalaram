@@ -3,7 +3,6 @@ package patel.jay.jaijalaram.Adapter;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,13 +12,18 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 
 import java.util.ArrayList;
 
-import patel.jay.jaijalaram.Activity.OrderItemsActivity;
 import patel.jay.jaijalaram.Adapter.ViewHolder.RowOrder;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.ConstClass.TimeConvert;
-import patel.jay.jaijalaram.ModelClass.Items;
-import patel.jay.jaijalaram.ModelClass.Order;
+import patel.jay.jaijalaram.Constants.TimeConvert;
+import patel.jay.jaijalaram.Models.Items;
+import patel.jay.jaijalaram.Models.Order;
+import patel.jay.jaijalaram.Panel.ShowItem.OrderItemsActivity;
 import patel.jay.jaijalaram.R;
+
+import static patel.jay.jaijalaram.Constants.MyConst.toast;
+import static patel.jay.jaijalaram.Constants.TimeConvert.timeMiliesConvert;
+import static patel.jay.jaijalaram.Login.SignActivity.customer;
+import static patel.jay.jaijalaram.Models.Customer.custName;
+import static patel.jay.jaijalaram.Models.Items.getItem;
 
 /**
  * Created by Jay on 24-Feb-18.
@@ -48,22 +52,27 @@ public class OrderAdapter extends RecyclerView.Adapter<RowOrder> {
         final Order order = arrayList.get(position);
         try {
 
-            TimeConvert tc = TimeConvert.timeMiliesConvert(order.getCurrentTime());
+            TimeConvert tc = timeMiliesConvert(order.getCurrentTime());
             holder.tvName.setText(tc.getDD_MMM_YY() + "\n" +
                     "" + tc.getHH_Min_AP());
             holder.tvPrice.setText(order.getPrice() + " ₹");
-            Items items = Items.getItem(activity, order.getiIdFirst());
-            holder.sdvImage.setImageURI(Uri.parse(items.getImgSrc()));
+
+            Items items = getItem(activity, order.getiIdFirst());
+            holder.sdvImage.setImageURI(items.getImgSrc());
+
+            if (!customer.getType().equals("U")) {
+                holder.tvCust.setVisibility(View.VISIBLE);
+                holder.tvCust.setText(custName(activity, order.getCustId()));
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
-            MyConst.toast(activity, e.getMessage());
+            toast(activity, e.getMessage());
         }
 
         class ClickListner implements View.OnClickListener {
             @Override
             public void onClick(View view) {
-//                CatItems.OrderItems(activity, order.getoId());
                 OrderItemsActivity.OITEM = order;
                 activity.startActivity(new Intent(activity, OrderItemsActivity.class));
             }
@@ -80,4 +89,5 @@ public class OrderAdapter extends RecyclerView.Adapter<RowOrder> {
     public int getItemCount() {
         return arrayList.size();
     }
+
 }

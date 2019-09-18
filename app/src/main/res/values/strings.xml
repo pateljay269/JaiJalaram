@@ -10,6 +10,7 @@
         <item>192.168.1.104</item>
         <item>192.168.43.191</item>
         <item>www.jayhpatel.tk</item>
+        <item>192.168.225.47</item>
     </string-array>
 
     <string-array name="action">
@@ -19,8 +20,71 @@
     </string-array>
 
     <string-array name="asd">
-        <item>Select</item>
+        <item>@string/select</item>
     </string-array>
+
+    <string-array name="userType">
+        <item>@string/user</item>
+        <item>@string/manager</item>
+        <item>@string/admin</item>
+    </string-array>
+
+    <string name="user">User</string>
+    <string name="manager">Manager</string>
+    <string name="admin">Admin</string>
+
+    <string-array name="spnIc">
+        <item>@string/catwise</item>
+        <item>@string/itemwise</item>
+    </string-array>
+
+    <string-array name="custSale">
+        <item>@string/custSale</item>
+        <item>@string/custFav</item>
+    </string-array>
+
+    <string-array name="custAvg">
+        <item>@string/year</item>
+        <item>@string/month</item>
+    </string-array>
+
+
+    <string name="select">Select</string>
+
+    <string name="custFav">Customer Fav</string>
+    <string name="custSale">Customer Sale</string>
+    <string name="timeCust">Cust Sale By Time</string>
+
+    <string-array name="calType">
+        <item>@string/day</item>
+        <item>@string/date</item>
+        <item>@string/week</item>
+        <item>@string/month</item>
+        <item>@string/year</item>
+        <item>@string/itemtime</item>
+    </string-array>
+
+    <string-array name="someCal">
+        <item>@string/year</item>
+        <item>@string/month</item>
+        <item>@string/date</item>
+    </string-array>
+
+    <string-array name="itemSale">
+        <item>@string/catwise</item>
+        <item>@string/itemwise</item>
+        <item>@string/itemQty</item>
+    </string-array>
+
+    <string name="day">Day</string>
+    <string name="date">Date</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="itemwise">Item Wise</string>
+    <string name="catwise">Category Wise</string>
+    <string name="itemtime">Time</string>
+    <string name="itemQty">Item Qty</string>
 
     <string name="select_action">Select Action</string>
     <string name="select_cat">Enter Category</string>
@@ -40,7 +104,6 @@
     <string name="enter_fname">Fname</string>
     <string name="enter_lname">Lname</string>
     <string name="enter_address">Address</string>
-    <string name="title_activity_dash_board">Dash Board</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -63,11 +126,9 @@
     <string name="description">Description</string>
     <string name="datetime">DateTime</string>
     <string name="enter_price">Price</string>
-    <string name="admin">Admin</string>
+
     <string name="cart">Cart</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="image_path">Image Path</string>
     <string name="enter_path">Path</string>
     <string name="select_image">Select Image</string>
@@ -82,7 +143,7 @@
     <string name="search">Search</string>
     <string name="price">₹ 250.00</string>
     <string name="rate">4.3</string>
-    <string name="ratings"><![CDATA[50 ratings & 15 reviews]]></string>
+    <string name="ratings">50 ratings &amp; 10 reviews</string>
     <string name="details">Details</string>
     <string name="add_to_cart">ADD TO CART</string>
     <string name="buy_now">BUY NOW</string>
@@ -90,5 +151,38 @@
     <string name="empty_cart">Your Cart is empty !</string>
     <string name="otp">Otp</string>
     <string name="submit">Submit</string>
+    <string name="todo">TODO</string>
+    <string name="name">Name</string>
+    <string name="join_date">Join Date</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="absent_all">Absent All</string>
+    <string name="present_all">Present All</string>
+    <string name="save">Save</string>
+    <string name="share">Share</string>
+    <string name="display_name">Display Name</string>
+
+    <!--Reports-->
+    <string name="periodic_reports">Periodic Reports</string>
+    <string name="items_sale_reports">Items Sale Reports</string>
+    <string name="customer_avg_reports">Customer Avg Sale Reports</string>
+    <string name="customer_sale_reports">Customer Sale Reports</string>
+    <string name="max_sale_by_customer">Max Sale Details Report</string>
+    <string name="sale_by_customer">Report By Customer</string>
+    <string name="custom_reports">Customized Reports</string>
+    <string name="call">Call</string>
+    <string name="confirmed">Confirmed:</string>
+    <string name="specific_search_reports">Specific Search Reports</string>
+    <string name="find">Find</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="date_wise_reports">Date Wise Sale Reports</string>
+    <string name="attendance_report">Attendance Report</string>
+    <string name="datewise_attendance">DateWise Attendance</string>
+    <string name="delivered">Delivered:</string>
+    <string name="not_confirm">Not Confirm</string>
+    <string name="not_deliver">Not Deliver</string>
+    <string name="refresh">Refresh</string>
+    <string name="reports">Reports</string>
 
 </resources>

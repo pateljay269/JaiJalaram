@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -29,61 +30,115 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Activity.DashActivity"
+            android:name=".Panel.Customer.CustDashActivity"
             android:configChanges="orientation"
-            android:label="@string/title_activity_dash_board"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"
-            android:windowSoftInputMode="adjustPan" />
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.AdminDashActivity"
+            android:name=".Panel.Admin.Reports.ReportsNavActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.AdminDashActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Admin.Activity.CatItemActivity"
+            android:name=".Panel.Admin.Activity.MenuActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Admin.Activity.AddItemActivity"
+            android:name=".Panel.Admin.Activity.AddItemActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Admin.Activity.UpdateItemActivity"
+            android:name=".Panel.Admin.Activity.UpdateItemActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Item.ItemDscActivity"
+            android:name=".Panel.ShowItem.ItemDscActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.OrderItemsActivity"
+            android:name=".Panel.ShowItem.OrderItemsActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.PieChartActivity"
+            android:name=".Panel.Admin.Activity.TempRVActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
         <activity
-            android:name=".Activity.TempRVActivity"
+            android:name=".Panel.Admin.Reports.Fragments.GrossRepoFragment"
             android:configChanges="orientation"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan"
             tools:ignore="InnerclassSeparator" />
-        <activity android:name=".Activity.BarChartActivity"></activity>
+        <activity
+            android:name=".Panel.Admin.Reports.Fragments.CustSaleFragment"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.Activity.WorkersActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.Activity.WorkerProfileActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.Activity.AttendanceActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.Activity.AdminCustAddActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+        <activity
+            android:name=".Panel.Admin.Activity.OrderDisplayActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"
+            tools:ignore="InnerclassSeparator" />
+
+        <service
+            android:name=".Other.BackgroundService"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedService,InnerclassSeparator" />
+
+        <receiver
+            android:name=".Other.BootUpReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver,InnerclassSeparator" />
     </application>
 
 </manifest>

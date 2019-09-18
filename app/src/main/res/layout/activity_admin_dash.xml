@@ -1,11 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/grid"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="5dp"
-    android:orientation="vertical"
-    tools:context="patel.jay.jaijalaram.Activity.AdminDashActivity">
+    android:columnCount="3"
+    tools:activity=".Activity.AdminDashActivity">
+
+    <Button
+        android:id="@+id/btnOrdDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Order Display"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnOrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="All Orders"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnWorker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Workers"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnAttend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Attendance"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/btnAddCust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Add Customer"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btnAddItem"
@@ -32,30 +93,6 @@
         android:textSize="15sp" />
 
     <Button
-        android:id="@+id/btnPie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/btnback"
-        android:minHeight="@dimen/min_height"
-        android:minWidth="@dimen/min_width"
-        android:text="Pie Chart"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/btnOrd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@drawable/btnback"
-        android:minHeight="@dimen/min_height"
-        android:minWidth="@dimen/min_width"
-        android:text="All Orders"
-        android:textColor="@android:color/white"
-        android:textSize="15sp" />
-
-    <Button
         android:id="@+id/btnCust"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,4 +104,16 @@
         android:textColor="@android:color/white"
         android:textSize="15sp" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btnReport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="@drawable/btnback"
+        android:minHeight="@dimen/min_height"
+        android:minWidth="@dimen/min_width"
+        android:text="Reports"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+</GridLayout>

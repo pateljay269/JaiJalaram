@@ -50,6 +50,15 @@
                     android:textColor="@color/red"
                     android:textSize="20sp" />
 
+                <TextView
+                    android:id="@+id/tvCust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enter_fname"
+                    android:textColor="@color/blue"
+                    android:textSize="17sp"
+                    android:visibility="gone" />
+
             </LinearLayout>
 
         </LinearLayout>

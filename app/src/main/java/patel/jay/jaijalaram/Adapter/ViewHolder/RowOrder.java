@@ -15,7 +15,7 @@ import patel.jay.jaijalaram.R;
 
 public class RowOrder extends RecyclerView.ViewHolder {
 
-    public TextView tvName, tvPrice;
+    public TextView tvName, tvPrice, tvCust;
     public SimpleDraweeView sdvImage;
     public LinearLayout cardLayout;
 
@@ -26,6 +26,7 @@ public class RowOrder extends RecyclerView.ViewHolder {
         cardLayout = itemView.findViewById(R.id.cardLayout);
 
         tvName = itemView.findViewById(R.id.tvName);
+        tvCust = itemView.findViewById(R.id.tvCust);
         tvPrice = itemView.findViewById(R.id.tvPrice);
     }
 }

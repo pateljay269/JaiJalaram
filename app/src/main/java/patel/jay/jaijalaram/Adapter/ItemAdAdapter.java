@@ -2,7 +2,6 @@ package patel.jay.jaijalaram.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +12,9 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import java.util.ArrayList;
 
 import patel.jay.jaijalaram.Adapter.ViewHolder.RowItem;
-import patel.jay.jaijalaram.Admin.Activity.UpdateItemActivity;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.ModelClass.Items;
+import patel.jay.jaijalaram.Constants.MyConst;
+import patel.jay.jaijalaram.Models.Items;
+import patel.jay.jaijalaram.Panel.Admin.Activity.UpdateItemActivity;
 import patel.jay.jaijalaram.R;
 
 /**
@@ -47,8 +46,7 @@ public class ItemAdAdapter extends RecyclerView.Adapter<RowItem> {
         holder.tvName.setText(item.getName());
 
         try {
-            Uri imageUri = Uri.parse(item.getImgSrc());
-            holder.sdvImage.setImageURI(imageUri);
+            holder.sdvImage.setImageURI(item.getImgSrc());
 
         } catch (Exception e) {
             e.printStackTrace();

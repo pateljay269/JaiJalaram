@@ -27,4 +27,9 @@
 
     </style>
 
+    <style name="NavigationDrawerStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:listPreferredItemHeightSmall">50dp</item>
+        <item name="listPreferredItemHeightSmall">50dp</item>
+    </style>
 </resources>

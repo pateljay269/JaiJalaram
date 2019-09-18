@@ -12,10 +12,10 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import java.util.ArrayList;
 
 import patel.jay.jaijalaram.Adapter.ViewHolder.RowItem;
-import patel.jay.jaijalaram.ConstClass.Animations;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.Item.CatItems;
-import patel.jay.jaijalaram.ModelClass.Categorys;
+import patel.jay.jaijalaram.Constants.Animations;
+import patel.jay.jaijalaram.Constants.MyConst;
+import patel.jay.jaijalaram.Models.Categorys;
+import patel.jay.jaijalaram.Panel.ShowItem.CatItems;
 import patel.jay.jaijalaram.R;
 
 /**

@@ -18,7 +18,7 @@ import patel.jay.jaijalaram.R;
 public class CartItemHolder extends RecyclerView.ViewHolder {
 
     public ImageButton btnAdd, btnMin, btnDelete;
-    public TextView tvName, tvPrice, tvDsc, tvQty;
+    public TextView tvName, tvPrice, tvQty;
     public SimpleDraweeView sdvImage;
     public EditText etDsc;
     public LinearLayout cardLayout;
@@ -33,7 +33,6 @@ public class CartItemHolder extends RecyclerView.ViewHolder {
         tvName = itemView.findViewById(R.id.tvName);
         tvPrice = itemView.findViewById(R.id.tvPrice);
         tvQty = itemView.findViewById(R.id.tvQty);
-        tvDsc = itemView.findViewById(R.id.tvDsc);
 
         etDsc = itemView.findViewById(R.id.etDsc);
 

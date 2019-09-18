@@ -2,7 +2,6 @@ package patel.jay.jaijalaram.Adapter;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +10,10 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import patel.jay.jaijalaram.Adapter.ViewHolder.RowItem;
-import patel.jay.jaijalaram.ConstClass.Animations;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.Item.ItemDscActivity;
-import patel.jay.jaijalaram.ModelClass.Items;
+import patel.jay.jaijalaram.Constants.Animations;
+import patel.jay.jaijalaram.Constants.MyConst;
+import patel.jay.jaijalaram.Models.Items;
+import patel.jay.jaijalaram.Panel.ShowItem.ItemDscActivity;
 import patel.jay.jaijalaram.R;
 
 /**
@@ -22,8 +21,6 @@ import patel.jay.jaijalaram.R;
  */
 
 public class ItemAdapter extends RecyclerView.Adapter<RowItem> {
-
-    public static Items ITEMS;
 
     private ArrayList<Items> arrayList;
     private Activity activity;
@@ -52,7 +49,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RowItem> {
         holder.tvName.setText(item.getName());
 
         try {
-            holder.sdvImage.setImageURI(Uri.parse(item.getImgSrc()));
+            holder.sdvImage.setImageURI(item.getImgSrc());
 
             if (!isSearch) {
                 Animations.Alpha(holder.sdvImage, 1500);
@@ -67,7 +64,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RowItem> {
 
             @Override
             public void onClick(View view) {
-                ITEMS = item;
+                ItemDscActivity.ITEMS = item;
                 activity.startActivity(new Intent(activity, ItemDscActivity.class));
             }
         }

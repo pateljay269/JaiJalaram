@@ -2,6 +2,7 @@ package patel.jay.jaijalaram.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import patel.jay.jaijalaram.Adapter.ViewHolder.CustHolder;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.ModelClass.Customer;
+import patel.jay.jaijalaram.Constants.MyConst;
+import patel.jay.jaijalaram.Models.Customer;
 import patel.jay.jaijalaram.R;
 
 /**
@@ -40,6 +41,15 @@ public class CustAdapter extends RecyclerView.Adapter<CustHolder> {
         final Customer customer = arrayList.get(position);
         try {
 
+            switch (customer.getType()) {
+                case "A":
+                    holder.tvName.setTextColor(Color.BLACK);
+                    break;
+
+                case "M":
+                    holder.tvName.setTextColor(Color.BLUE);
+                    break;
+            }
             holder.tvName.setText(customer.getFname() + " " + customer.getLname());
             holder.tvMobile.setText(customer.getMobile() + "");
         } catch (Exception e) {

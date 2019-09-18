@@ -2,20 +2,29 @@ package patel.jay.jaijalaram.Adapter;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.net.Uri;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import patel.jay.jaijalaram.Adapter.ViewHolder.CartItemHolder;
-import patel.jay.jaijalaram.ConstClass.MyConst;
-import patel.jay.jaijalaram.Fragments.CartFragment;
-import patel.jay.jaijalaram.ModelClass.Items;
-import patel.jay.jaijalaram.ModelClass.OrderItem;
+import patel.jay.jaijalaram.Constants.MYSQL;
+import patel.jay.jaijalaram.Constants.MyConst;
+import patel.jay.jaijalaram.Constants.ServerCall;
+import patel.jay.jaijalaram.Models.Items;
+import patel.jay.jaijalaram.Models.OrderItem;
+import patel.jay.jaijalaram.Panel.Customer.Fragments.CartFragment;
 import patel.jay.jaijalaram.R;
+
+import static patel.jay.jaijalaram.Constants.MyConst.toast;
+import static patel.jay.jaijalaram.Panel.ShowItem.OrderItemsActivity.OITEM;
 
 /**
  * Created by Jay on 24-Feb-18.
@@ -25,21 +34,17 @@ public class OrderItemAdapter extends RecyclerView.Adapter<CartItemHolder> {
 
     private ArrayList<OrderItem> arrayList;
     private Activity activity;
-    private boolean isDisplay;
+    private boolean isDispAdDe;
 
-    public OrderItemAdapter(Activity activity, ArrayList<OrderItem> arrayList) {
+    public OrderItemAdapter(Activity activity, ArrayList<OrderItem> arrayList, boolean isDispAdDe) {
         this.arrayList = arrayList;
         this.activity = activity;
-        isDisplay = false;
-    }
-
-    public OrderItemAdapter(Activity activity, ArrayList<OrderItem> arrayList, boolean isDisplay) {
-        this(activity, arrayList);
-        this.isDisplay = isDisplay;
+        this.isDispAdDe = isDispAdDe;
     }
 
     @Override
     public CartItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        Fresco.initialize(activity);
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_item_cart, parent, false);
         return new CartItemHolder(view);
     }
@@ -50,25 +55,27 @@ public class OrderItemAdapter extends RecyclerView.Adapter<CartItemHolder> {
         final OrderItem ordItem = arrayList.get(position);
         final Items items = Items.getItem(activity, ordItem.getiId());
         try {
-            if (isDisplay) {
+            if (isDispAdDe) {
                 setHide(holder, View.VISIBLE);
-                holder.tvDsc.setVisibility(View.GONE);
             } else {
-                holder.etDsc.setVisibility(View.GONE);
+                holder.etDsc.setEnabled(false);
                 setHide(holder, View.GONE);
             }
 
             holder.tvName.setText(items.getName());
             holder.tvQty.setText(ordItem.getQty() + "");
-            holder.etDsc.setText(ordItem.getDsc());
-            holder.tvDsc.setText(ordItem.getDsc());
             holder.tvPrice.setText(ordItem.getPrice() + " ₹");
 
-            holder.sdvImage.setImageURI(Uri.parse(items.getImgSrc()));
+            if (!ordItem.getDsc().equals("")) {
+                holder.etDsc.setText(ordItem.getDsc());
+            } else {
+                holder.etDsc.setVisibility(View.GONE);
+            }
+            holder.sdvImage.setImageURI(items.getImgSrc());
 
         } catch (Exception e) {
             e.printStackTrace();
-            MyConst.toast(activity, e.getMessage());
+            toast(activity, e.getMessage());
         }
 
         class ClickListner implements View.OnClickListener {
@@ -78,16 +85,13 @@ public class OrderItemAdapter extends RecyclerView.Adapter<CartItemHolder> {
                     int qty = ordItem.getQty();
                     switch (view.getId()) {
                         case R.id.btnAdd:
-                            if (qty < 9) {
-                                qty++;
-
-                            }
+//                            if (qty < 9)
+                            qty++;
                             break;
 
                         case R.id.btnMin:
-                            if (qty > 1) {
+                            if (qty > 1)
                                 qty--;
-                            }
                             break;
                     }
                     int price = qty * items.getPrice();
@@ -96,10 +100,11 @@ public class OrderItemAdapter extends RecyclerView.Adapter<CartItemHolder> {
 
                     holder.tvQty.setText(qty + "");
                     holder.tvPrice.setText(price + " ₹");
+
                     CartFragment.setCartPrice();
                 } catch (Exception e) {
                     e.printStackTrace();
-                    MyConst.toast(activity, e.getMessage());
+                    toast(activity, e.getMessage());
                 }
             }
         }
@@ -117,6 +122,52 @@ public class OrderItemAdapter extends RecyclerView.Adapter<CartItemHolder> {
                 CartFragment.setOrderItem(activity);
             }
         });
+
+        class ItemClickListner implements View.OnClickListener {
+            @Override
+            public void onClick(View view) {
+                if (!isDispAdDe) {
+                    if (!OITEM.isDeliver()) {
+                        alertView();
+                    }
+                }
+            }
+
+            private void alertView() {
+                AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+                builder.setMessage("Order Item Delete..???");
+
+                builder.setTitle("Are You Sure??")
+                        .setCancelable(true)
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int i) {
+                                dialog.cancel();
+                            }
+                        })
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String url1 = ServerCall.BASE_URL + ServerCall.ORDER + "delOitem";
+                                HashMap<String, String> hm = new HashMap<>();
+                                hm.put(MYSQL.Order.OID, OITEM.getoId() + "");
+                                hm.put(MYSQL.Order.IID, items.getiId() + "");
+                                new ServerCall(activity, url1, hm, MyConst.DELETE).execute();
+                            }
+                        });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        }
+
+        ItemClickListner click = new ItemClickListner();
+
+        holder.cardLayout.setOnClickListener(click);
+        holder.etDsc.setOnClickListener(click);
+        holder.sdvImage.setOnClickListener(click);
+        holder.tvName.setOnClickListener(click);
+        holder.tvPrice.setOnClickListener(click);
+        holder.tvQty.setOnClickListener(click);
     }
 
     @Override

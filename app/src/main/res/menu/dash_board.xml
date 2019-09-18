@@ -7,10 +7,12 @@
         android:title="@string/cart"
         app:actionLayout="@layout/custom_action_badge"
         app:showAsAction="always" />
+
     <item
-        android:id="@+id/action_notify"
-        android:icon="@drawable/notify"
-        android:title="@string/notification" />
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh"
+        android:title="@string/refresh" />
+
     <item
         android:id="@+id/action_logout"
         android:icon="@drawable/logout"
